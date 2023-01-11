@@ -1,6 +1,4 @@
-# Pequeño script en ***php***, para poder crear archivo .phar
-
-* **Script php**
+## * **Script php**
 
 ```php
 <?php
