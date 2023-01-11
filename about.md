@@ -3,18 +3,18 @@ title: Home
 layout: page
 ---
 
-## EL BLOG CAFETERO...Hola 👋  sean bienvenidos.
-### En este blog ***~~NO~~*** se bebe ***CAFE*** ☕️  y se aprende ***Hackig Etico***.
+## EL BLOG CAFETERO...Hola 👋 .
+### En este blog ***~~NO~~*** se bebe ***CAFE*** ☕️  y se aprende ***Hacking Etico***.
 --------------------------------------------------------
 
-## *Aqui podra encontrar:*
+## *Aqui podras encontrar:*
 
-1. Writeup Maquinas **HACK-THE-BOX** 
+1. Writeup de Maquinas **HACK-THE-BOX** 
 
 2. Scripting
 
-3. Bash y Python
+3. Utilidades
 
-4. Utilidades
+### BienVenidos
 
 ![](4.png)
