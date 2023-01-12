@@ -1,3 +1,8 @@
+---
+layout: post
+author: 4akatun
+---
+
 ## * **Script php**
 
 ```php
