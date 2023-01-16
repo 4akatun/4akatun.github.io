@@ -1,3 +1,3 @@
 ## BienVenidos
 
-![img](logo.png)
+![img](ambu.png)
