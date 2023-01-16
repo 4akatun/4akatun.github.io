@@ -1,3 +1,3 @@
 ## BienVenidos
 
-![img](ambu.png)
+![img](ambu.jpg)
