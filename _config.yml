@@ -8,6 +8,7 @@ permalink: :slug
 social:
   twitter: akatunaso
   github: 4akatun
+  hackthebox: 4akatun
 
 plugins:
  - jekyll-feed
