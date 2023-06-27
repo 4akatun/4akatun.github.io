@@ -1,10 +1,10 @@
 ---
 layout: post
-author: 4akatun
+title: Mentor Hackthebox
 ---
 
 # Writeup
-![Mentor](/assets/img/Mentor/mentor.png)
+![Mentor]({{'/assets/img/Mentor/mentor.png' | relative_url}})
 
 HACK-THE-BOX
 
@@ -58,7 +58,7 @@ http://mentorquotes.htb/ [200 OK] Country[RESERVED][ZZ], HTML5, HTTPServer[Werkz
 
 Vamo a hechar un vistazo a la pagina web para ver que contenido nos ofrece.
 
-![web](/assets/img/Mentor/mentorWeb.png)
+![web]({{'/assets/img/Mentor/mentorWeb.png' | relative_url}})
 
 Vemo unas bonitas frases de motivacion ***¡bien!*** sigamos buscando cosas.
 Haremos un poco de fuzzing para buscar **posibles direcctorios** y **posibles subdomios**, siempre hay que probar todo y buscar bien.
@@ -120,10 +120,10 @@ Target: http://api.mentorquotes.htb/
 ```
 Al parecer encontramos algunos directorios, de momento el que nos interesa es **/docs**.
 
-![api-docs](/assets/img/Mentor/api-docs.png)
-![signup](/assets/img/Mentor/signup.png)
-![auth](/assets/img/Mentor/auth.png)
-![users](/assets/img/Mentor/users.png)
+![api-docs]({{'/assets/img/Mentor/api-docs.png' | relative_url}})
+![signup]({{'/assets/img/Mentor/signup.png' | relative_url}})
+![auth]({{'/assets/img/Mentor/auth.png' | relative_url}})
+![users]({{'/assets/img/Mentor/users.png' | relative_url}})
 
 Aqui he de decir estube un rato atascado, no funcionaba nada de lo que hacia.
 Obte por hacer un escaneo por **UDP** por si encontraba algo (nunca hay que descartar).
@@ -150,27 +150,27 @@ HOST-RESOURCES-MIB::hrSWInstalledName.478 = STRING: "login_1:4.8.1-2ubuntu2.1_am
 ```
 Encontramos una contraseña que vamos a provar en **api.mentorquotes.htb/docs**.
 
-![jame-login](/assets/img/Mentor/james-login.png)
+![jame-login]({{'/assets/img/Mentor/james-login.png' | relative_url}} )
 
 Obtenemos buenos resultados y tenemos un **token**.
 
-![james-token](/assets/img/Mentor/jame-token.png)
+![james-token]({{'assets/img/Mentor/jame-token.png' | relative_url}})
 
 Usamos ese token para desde burpsuite enviar por apuntando a **/admin**
 
-![post-admin](/assets/img/Mentor/post-admin.png)
+![post-admin]({{'/assets/img/Mentor/post-admin.png' | relative_url}})
 
 Vemos dos directorios **/check y /backup**, no centraremos en **backup**, que enviaremos por **POST**
 Como vemos que las respuestas nos las esta dando en **json** le enviaremos una cadnea vacia para tantear que pasa.
 
-![jsonPOST](/assets/img/Mentor/jsonPOST.png)
+![jsonPOST]({{'/assets/img/Mentor/jsonPOST.png' | relative_url}})
 
 Y bien nos pide que tiene que ser enviado con dos dato **"body y path"**. Enviamos lo que pide.
 
-![data](/assets/img/Mentor/datajson.png)
+![data]({{'/assets/img/Mentor/datajson.png' | relative_url}})
 
 Hagamos pruebas manipulando los campos para ver que obtenemos.
-![traza](/assets/img/Mentor/icmp.png)
+![traza]({{'/assets/img/Mentor/icmp.png' | relative_url}})
 ```bash
 ❯ tcpdump -i tun0 icmp
 tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
@@ -187,7 +187,7 @@ Enviamos **4 trazas icmp** a nuestro equipo y tenemos conectivida.
 
 Aqui puedes ver informacion -> [mkfifo enlace](https://www.reydes.com/d/?q=Crear_un_Shell_Inverso_utilizando_mkfifo)
 Al nuestra linea tendremos que cambiarla un poco con respecto al articulo anterior.
-![conect](/assets/img/Mentor/conection.png)
+![conect]({{'/assets/img/Mentor/conection.png' | relative_url}})
 
 
 Ganamos acceso estando como **root** pero es un contenedor, tendremos que buscar la manera de saltar a la maquina real.

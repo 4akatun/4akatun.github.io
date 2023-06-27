@@ -1,10 +1,10 @@
 ---
 layout: post
-author: 4akatun
+title: Soccer Hackthebox
 ---
 
 # Writeup
-![HTB](/assets/img/Soccer/soccer.png)
+![HTB]({{'/assets/img/Soccer/soccer.png' | relative_url}})
 
 HACK-THE-BOX
 
@@ -48,7 +48,7 @@ Vemos que nos lanza un ***ERROR*** pues nuestra maquina no tiene conocimiento de
 
 Una vez lo tengamos ingresaremos en nuestro navegador la ***url -> http://soccer.htb*** que nos llevara al sitio web
 
-![imagen Web](/assets/img/Soccer/web.png)
+![imagen Web]({{'/assets/img/Soccer/web.png' | relative_url}})
 
 La pagina web parece ser muy estatica y no tener apesnas infomacion. Procedemos a continuacion prodecemos con la herramienta ***WFUZZ*** para buscar posibles directorios existentes.
 ```bash
@@ -76,18 +76,19 @@ Y obtenemos resultados encontramos el direcctorio ***/tiny***.
 
 Si continuamos con la busqueda en dicho direcctorio no encontramos con un panel de *usuario y contraseña*
 
-![adminpanel](/assets/img/Soccer/adminpanel.png)
+![adminpanel]({{'/assets/img/Soccer/adminpanel.png' | relative_url}})
+:w
 
 Haciendo una busqueda rapida por ***Goggle*** podemos dar con unas credenciales por defecto.
 
-![credential](/assets/img/Soccer/credential.png)
+![credential]({{'/assets/img/Soccer/credential.png' | relative_url}})
 
 Una vez probamos, vemos que las credenciales son correctas y vamos indagando mas en esta web.
 
 Nos aparece lo siguiente...
 
-![filemanager_Web](/assets/img/Soccer/filemanager.png)
-![directorio](/assets/img/Soccer/tinydirectorio.png)
+![filemanager_Web]({{'/assets/img/Soccer/filemanager.png' | relative_url}})
+![directorio]({{'/assets/img/Soccer/tinydirectorio.png' | relative_url}})
 Vemos lo que parece un *gestor o adminitrador de archivos* donde si nos fijamos tiene un apartado uploads, en el que probaremos a subir nuestro *archivo php* con la esperanza de que sea factible.
 
 Debemos de tener en cuenta que solo tenemos permisos en la carpeta ***tiny/uploads***, es alli donde se alojara nuestro archivo.
@@ -103,11 +104,11 @@ Nos creamos nuestro archivo ***php*** con carga util para poder establecer una s
 
 Lo subimos...
 
-![upload](/assets/img/Soccer/upload.png)
+![upload]({{'/assets/img/Soccer/upload.png)' | relative_url}}
 
 Una vez tenemos el archivo subido pulsamos en el para obtener la sieguiete ventana...
 
-![shell](/assets/img/Soccer/shell.png)
+![shell]({{'/assets/img/Soccer/shell.png)' | relative_url}}
 
 A continuacion no ponemos en escucha en nuestro equipo con netcat y pulsamos ***Open*** en pagina web del archivo. Asi podremos obtener nuestra ***shell*** reversa como ***www-data*** 
 

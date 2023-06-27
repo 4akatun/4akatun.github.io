@@ -1,0 +1,22 @@
+<h6>Puedes Encontrarme En Redes Sociales</h6>
+
+<ul class="social-media">
+
+  {% if site.social.github %}
+    <li>
+      <a title="{{ site.social.github }} on Github" href="https://github.com/4akatun" target="_blank"><i class="fab fa-github fa-2x" style="color:white"></i></a>
+    </li>
+  {% endif %}
+
+  {% if site.social.instagram %}
+    <li>
+      <a title="{{ site.social.instagram }} on Hackthebox" href="https://www.hackthebox.com/profile/911902{{ site.social.linkedin }}" target="_blank"><i class="fab fa-codepen fa-2x" style="color:green"></i></a>
+    </li>
+  {% endif %}
+
+  {% if site.social.instagram %}
+    <li>
+      <a title="{{ site.social.instagram }} on Twitter" href="https://twitter.com/akatunaso{{ site.social.instagram }}" target="_blank"><i class="fab fa-twitter fa-2x" style="color:blue"></i></a>
+    </li>
+  {% endif %}
+</ul>

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: 4akatun
+tag: tags
 ---
 
 ## * **Script php**

@@ -5,7 +5,7 @@ author: 4akatun
 
 # Writeup
 
-![Stocker](assets/img/Stocker/stocker.png)
+![Stocker]({{'assets/img/Stocker/stocker.png' | relative_url}})
 
 
 HACK-THE-BOX
@@ -66,7 +66,7 @@ ERROR Opening: http://stocker.htb - no address for stocker.htb
 No reconoce el nombre de dominio **stocker.htb** asi que tendremos que introducirlo en **/etc/hosts**
 Una vez lo tengamos ya si introducimo en el navegador.
 
-![web](assets/img/Stocker/webstocker.png)
+![web]({{'assets/img/Stocker/webstocker.png' | relative_url}})
 
 La web contiene poco, debemos buscar **rutas y subdominios** que puedan existir.
 
@@ -90,39 +90,39 @@ Obtenemos un nuevo dominio, que tambien tendremo que introducir en **/etc/host**
 
 Y esto es lo que vemos.
 
-![login](assets/img/Stocker/weblogin.png)
+![login]({{'assets/img/Stocker/weblogin.png' | relative_url}})
 
 Usaremos **burpSuite** para interceptar la peticion y ver mas a fondo.
 Al enviar la peticion vemos que nos da error
 
-![burp3](assets/img/Stocker/burp3.png)
+![burp3]({{'assets/img/Stocker/burp3.png' | relative_url}})
 
 Intentaremos enviarlo en formato **json**, cambiar **content-type** e intentar burlar el panel de login.
 
-![burp1](assets/img/Stocker/burp1.png)
+![burp1]({{'assets/img/Stocker/burp1.png' | relative_url}})
 
 Al parecer resulto y podemos acceder a la *web*
 
 Vemo una serie de articulos que estan a la venta
 
-![web2](assets/img/Stocker/webStock.png)
+![web2]({{'assets/img/Stocker/webStock.png' | relative_url}})
 
 Comprare un producto e interceptare la peticion con **BurpSuite** de nuevo.
 
-![burp4](assets/img/Stocker/burp4.png) ![stock](assets/img/Stocker/burp.png)
+![burp4]({{'assets/img/Stocker/burp4.png' | relative_url}}) ![stock]({{'assets/img/Stocker/burp.png' | relative_url}})
 
 Modificamos el titulo para introducir lo que nos interesa, para poder leer archivos de la maquina victima.
 Nos quedamos con el numero de **orderID** y lo introducimos en la *web* en la ruta **/api/po/**
 Y asi podemos leer el contedido de **/etc/passwd** y listar los usuarios del sistema.
-![etcpasswd](assets/img/Stocker/etcpasswd.png)
+![etcpasswd]({{'assets/img/Stocker/etcpasswd.png' | relative_url}})
 
 Ya que tenemos exito en la lectura de archivo, provare a buscar en una ruta concreta si hay credenciales en texto plano.
 
-![img](assets/img/Stocker/burp2.png)
+![img]({{'assets/img/Stocker/burp2.png' | relative_url}})
 
 Tengo suerte y puedo visualizar unas credenciales.
 
-![sshpass](assets/img/Stocker/sshpassw.png)
+![sshpass]({{'assets/img/Stocker/sshpassw.png' | relative_url}})
 
 La provare por *ssh* con el usuario *angoose* que vimos antes.
 
