@@ -24,7 +24,7 @@ PORT   STATE SERVICE REASON
 22/tcp open  ssh     syn-ack ttl 63
 80/tcp open  http    syn-ack ttl 63
 ```
-Nos escontramos habierto solo dos puertos en este caso, procedemos a ver su **version** y **servicio**.
+Nos escontramos abierto solo dos puertos en este caso, procedemos a ver su **version** y **servicio**.
 
 ```bash
 ❯ nmap -sCV -p22,80 10.10.11.193
@@ -93,7 +93,7 @@ Al parecer aqui no hay nada de probecho.
 Found: api.mentorquotes.htb
 ```
 
-Y ***¡Bingo!*** tambien introducimos esta nueva direccion en el ***/etc/hosts***, vamos a ver de que se trata.
+Y tenemos exito, introducimos esta nueva direccion en el ***/etc/hosts***, vamos a ver de que se trata.
 Haremos **fuzzing** para ver que directorios puede contener esta api.
 
 ```bash
