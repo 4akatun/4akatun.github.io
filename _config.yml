@@ -4,7 +4,7 @@ name: Blog-Etical_Hacking
 description: Pentester
 
 # Url is currently only used only for the RSS feed in feed.xml
-#url: https://4akatun.github.io
+url: https://4akatun.github.io
 #url: http://localhost:4000
 
 # For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
@@ -27,7 +27,7 @@ social:
   linkedin:
   instagram: ''
   lastfm: ''
-  rss: ''
+  rss: 'feed.xml'
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key:
