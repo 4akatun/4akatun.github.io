@@ -138,7 +138,7 @@ Veo que funciona y de momento tengo capacidad de lectura de archivos, antes vi q
 ```bash
 ❯ java -jar jenkins-cli.jar -s http://192.168.2.8:8080/ -http connect-node "@/var/www/html/connect.php"
 : anonymous no tiene el permiso Nodo/Connect
-$password = "g30rg3_L3@k3D";: No such agent "$password = "g30rg3_L3@k3D";" exists.
+$password = "g3*********3D";: No such agent "$password = "g3*********3D";" exists.
 $servername = "localhost";: No such agent "$servername = "localhost";" exists.
 <?php: No such agent "<?php" exists.
 $username = "george";: No such agent "$username = "george";" exists.
