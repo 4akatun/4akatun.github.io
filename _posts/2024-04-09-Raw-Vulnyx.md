@@ -188,7 +188,7 @@ Hi Ha
 cker!
 You d
 id a 
---More--(45%) -> escribir <!bash>
+--More--(45%)
 ```
 Esta vulnerabilidad requiere de entrar en el modo paginate cuando se abre un archivo
 ```bash
