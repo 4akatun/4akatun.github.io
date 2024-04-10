@@ -203,7 +203,7 @@ edward@wrapp:/var/www/html/advanced-search$ cat cmd.php
 ```bash
 script /dev/null -c bash
 CNTRL + Z
-fg raw -echo; fg
+stty raw -echo; fg
 reset xterm
 ```
 Me conecto como el usuario www-data y con este usuario puedo ejecutar un binario 
